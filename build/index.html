@@ -1,0 +1,551 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;php&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="php">php</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#sending-sms" class="toc-h1 toc-link" data-title="Sending SMS">Sending SMS</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request" class="toc-h2 toc-link" data-title="Sending SMS">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-data" class="toc-h2 toc-link" data-title="Sending SMS">Request Data</a>
+                  </li>
+                  <li>
+                    <a href="#response-data" class="toc-h2 toc-link" data-title="Sending SMS">Response Data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://sms.palvac.co.ke/#!/signup'>Sign Up for a Developer Key</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Palvac Bulk SMS API!
+You can use this API to integrate you application with our bulk messaging solution.</p>
+
+<p>The bulk messaging system is API based, which makes it possible to integrate with any application that
+can make an HTTP request, irrespective of the language used to develop the application</p>
+
+<p>We have language code samples in Python, Java, Shell and PHP on dark area to the right, and
+you can switch the programming language of the examples with the tabs in the top right.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="c1">//API Url
+</span><span class="nv">$url</span> <span class="o">=</span> <span class="s1">'https://sms.palvac.co.ke/api/v1/sms/send'</span><span class="p">;</span>
+
+<span class="c1">//Initiate cURL.
+</span><span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+
+<span class="c1">//Encode the array into JSON.
+</span><span class="nv">$jsonDataEncoded</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$jsonData</span><span class="p">);</span>
+
+<span class="c1">//Tell cURL that we want to send a POST request.
+</span><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">//Set the content type and Authorization headers
+</span><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'Content-Type: application/json'</span><span class="p">,</span>
+    <span class="s1">'Authorization: Api-Key &lt;MY_API_KEY&gt;'</span><span class="p">));</span>
+
+<span class="c1">//Execute the request
+</span><span class="nv">$result</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">echo</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># ensure requests is installed i.e. pip install requests</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"content-type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+    <span class="s">"Accept"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+    <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Api-Key &lt;MY_API_KEY&gt;"</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://sms.palvac.co.ke/api/v1/sms/send'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl  -X POST <span class="s2">"https://sms.palvac.co.ke/api/v1/sms/send"</span> <span class="se">\</span>
+-H <span class="s2">"Authorization: Api-Key &lt;MY_API_KEY&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>&lt;MY_API_KEY&gt;</code> with your actual API key.</p>
+</blockquote>
+
+<p>Our bulk messaging system uses API keys to grant your application access to the API.
+To get an API key, start by <a href="https://sms.palvac.co.ke/#!/signup">signing up for an account</a>.
+Once you are logged in, navigate to <code>Account Settings</code> to access your API key. If
+you don&#39;t already have one, click on <code>Request API KEY</code> to generate.</p>
+
+<p>The system expects for the API key to be included in all API requests to the server in a header
+that looks like the following:</p>
+
+<p><code>Authorization: Api-Key MY_API_KEY</code></p>
+
+<aside class="notice">
+You must replace <code>MY_API_KEY</code> with your actual API key.
+</aside>
+<h1 id='sending-sms'>Sending SMS</h1><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="c1">//API Url
+</span><span class="nv">$url</span> <span class="o">=</span> <span class="s1">'https://sms.palvac.co.ke/api/v1/sms/send'</span><span class="p">;</span>
+
+<span class="c1">//Initiate cURL.
+</span><span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+
+<span class="c1">//The JSON data.
+</span><span class="nv">$jsonData</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="s1">'Hey, this is a test message'</span><span class="p">,</span>
+    <span class="s1">'to'</span> <span class="o">=&gt;</span> <span class="s1">'0716251663'</span><span class="p">,</span>
+    <span class="s1">'async'</span> <span class="o">=&gt;</span> <span class="kc">false</span>
+<span class="p">);</span>
+
+<span class="c1">//Encode the array into JSON.
+</span><span class="nv">$jsonDataEncoded</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$jsonData</span><span class="p">);</span>
+
+<span class="c1">//Tell cURL that we want to send a POST request.
+</span><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">//Attach our encoded JSON string to the POST fields.
+</span><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$jsonDataEncoded</span><span class="p">);</span>
+
+<span class="c1">//Set the content type and Authorization headers
+</span><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'Content-Type: application/json'</span><span class="p">,</span>
+    <span class="s1">'Authorization: Api-Key &lt;MY_API_KEY&gt;'</span><span class="p">));</span>
+
+<span class="c1">//Execute the request
+</span><span class="nv">$result</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">echo</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># ensure requests is installed i.e. pip install requests</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"content-type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+    <span class="s">"Accept"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+    <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Api-Key &lt;MY_API_KEY&gt;"</span>
+<span class="p">}</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="s">"Hey, this is a test message"</span>
+<span class="n">to</span> <span class="o">=</span> <span class="s">"0701234567, 0701234568"</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"message"</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span>
+    <span class="s">"to"</span><span class="p">:</span> <span class="n">to</span><span class="p">,</span>
+    <span class="s">"async"</span><span class="p">:</span> <span class="bp">False</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://sms.palvac.co.ke/api/v1/sms/send'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">response</span>
+
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'id'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'status'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">charge</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'charge'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">errorMessage</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'errorMessage'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="se">\</span>
+-H <span class="s2">"Content-type: application/json"</span> <span class="se">\</span>
+-H <span class="s2">"Authorization: Api-Key &lt;MY_API_KEY&gt;"</span> <span class="se">\</span>
+-H <span class="s2">"Accept: application/json"</span> -X <span class="se">\</span>
+POST -d <span class="s1">'{"message":"Hey this is a test message","to":"0701234567, 0701234568","async":"False"}'</span> <span class="se">\</span>
+https://sms.palvac.co.ke/api/v1/sms/send
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">10241</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"formattedCharge"</span><span class="p">:</span><span class="s2">"KES 1.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+254701234567"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"charge"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Hey, this is a test message"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"errorMessage"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">10242</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"formattedCharge"</span><span class="p">:</span><span class="s2">"KES 1.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+254701234568"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"charge"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Hey, this is a test message"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"errorMessage"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint is used for sending out the messages.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://sms.palvac.co.ke/api/v1/sms/send</code></p>
+
+<p>To send you message, send an HTTP POST request to <code>https://sms.palvac.co.ke/api/v1/sms/send</code>.
+Currently the application only supports content type <code>application/json</code>, so be sure to specify
+this header.</p>
+<h3 id='request-data'>Request Data</h3>
+<p>You specify the message and recipients as follows:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>None</td>
+<td>Yes</td>
+<td>This is the message that will be sent to the contacts</td>
+</tr>
+<tr>
+<td>to</td>
+<td>None</td>
+<td>Yes</td>
+<td>This is the contact to which the message will be sent. Multiple contacts can be supplied and separated by a comma e.g. <code>0701234567, 0701234568</code></td>
+</tr>
+<tr>
+<td>async</td>
+<td>True</td>
+<td>No</td>
+<td>This attribute is used to control whether the message will be sent synchronously or asynchronously. Synchronously (async=False) means that the HTTP call to sent the message will block until all messages have been sent, and return the result of sending each message in an array. Asynchronous (async=True) means that once the request has been received, the HTTP call will not wait until all messages have been sent, but rather it would return immediately with the message that the request has been received. The messages are queued to be sent after the call returns. Asynchronous sending is recommended when sending messages to a large number of contacts that is likely to take a longer period.</td>
+</tr>
+</tbody></table>
+<h3 id='response-data'>Response Data</h3>
+<p>When the message is being sent asynchronously i.e. <code>async=True</code>, the server will immediately return <code>Request accepted successfully..</code></p>
+
+<p>When the message is being sent synchronously i.e. <code>async=False</code>, the server will return an array
+with an entry for each contact the message was sent to. Each entry in the array will have the
+following attributes:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Our unique internal reference id used for tracking sending the provided message to a specific contact</td>
+</tr>
+<tr>
+<td>formattedCharge</td>
+<td>The cost of sending the message if the message was sent successfully in the format <code>CURRENCY AMOUNT</code> e.g. <code>KES 1.0</code></td>
+</tr>
+<tr>
+<td>phone</td>
+<td>ISO formatted Phone number for the contact where the message was sent, if the message was sent successfully</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Status to indicate whether the message was sent successfully (<code>Success</code>) or not (<code>Failed</code>)</td>
+</tr>
+<tr>
+<td>charge</td>
+<td>Cost of sending the message without the currency code</td>
+</tr>
+<tr>
+<td>message</td>
+<td>Content of the message that was sent</td>
+</tr>
+<tr>
+<td>errorMessage</td>
+<td>Any error message if the message was not sent successfully e.g. <code>Insufficient Funds</code></td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The Bulk SMS API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request does not conform the expected format (Invalid data)</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- You do not have appropriate permissions to access API</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The URL specified does not exist.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="php">php</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
